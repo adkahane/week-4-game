@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crystal Clickers</title>
+	<meta charset="UTF-8">
+  	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<h1>Number to Guess: <span id="number-to-guess"></span></h1>
+
+	<div class="container mt-5 pb-5">
+
+        <div class="row">
+          <span id="instruct" class="col-12 py-3 mb-5 border border-top-0 border-right-0 border-left-0 text-center">These are the instructions on how to play</span>
+        </div>
+        <div class="row mt-3">
+          <span id="winStats" class="col-12 text-center"><p>Wins : </p></span>
+        </div>
+        <div class="row">
+          <span id="loseStats" class="col-12 text-center"><p>Losses : </p></span>
+        </div>
+        <div class="row text-center my-4">
+          <span id="numberGoal" class="col-12"><p>A NUMBER</p></span>
+        </div>
+        <div class="row">
+        	<div id="crystals">
+  			</div>
+  		</div>
+        <div class="row">
+          <span><p>Your total score is : </p></span>
+        </div>
+        <div class="row">
+          <span id="userScore" class="col-12 text-center"><p>**SCORE**</p></span>
+        </div>
+      
+    </div>
+	
+	<script src="assets/javascript/game.js"></script>
+</body>
+</html>

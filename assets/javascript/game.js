@@ -30,7 +30,7 @@ function compareUsed(ranNum) {
 function makeCrystalValue() {
 	var ranNum = randomNum(1, 12);
 	if (compareUsed(ranNum) === true) {
-		makeCrystalvalue();
+		
 	}	
 	else {
 		crystValues.push(ranNum);
@@ -62,7 +62,7 @@ function makeCrystals() {
 
 // This is the game
 function theGame() {
-	for(i = 0; i < 4; i++) {
+	for(i = 0; crystValues.length < 4; i++) {
 		makeCrystalValue();
 	}
 	makeCrystals();

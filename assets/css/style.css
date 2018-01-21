@@ -3,3 +3,13 @@
       height: 128px;
       margin: 30px 30px;
     }
+
+body {
+	background-image: url("../images/bitcoin_background.jpg"); 
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+html {
+    height: 100%
+}

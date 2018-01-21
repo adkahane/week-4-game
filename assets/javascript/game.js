@@ -35,7 +35,6 @@ function makeCrystalValue() {
 	else {
 		crystValues.push(ranNum);
 	}
-	console.log(crystValues);
 }
 
 // Creates crystal img's assigns a data value and an image source
@@ -60,6 +59,32 @@ function makeCrystals() {
 	}
 }
 
+// Resets the Game and updates stats when you run out of guesses
+function youLose() {
+	losses++;
+	var audio = new Audio('assets/audio/lose_flush.mp3');
+	audio.play();
+	$("#loseStats").html("<p>Losses : " + losses + "</p>");
+	$("#crystals").html("");
+	userTotal = 0;
+	crystValues = [];
+	console.log(crystValues);
+	theGame();
+}
+
+// Plays audio and updates stats when user wins
+function youWin() {
+	wins++;
+	var audio = new Audio('assets/audio/winclap.mp3');
+	audio.play();
+	$("#winStats").html("<p>Wins : " + wins + "</p>");
+	$("#crystals").html("");
+	userTotal = 0;
+	crystValues = [];
+	console.log(crystValues);
+	theGame();
+}
+
 // This is the game
 function theGame() {
 	for(i = 0; crystValues.length < 4; i++) {
@@ -68,6 +93,7 @@ function theGame() {
 	makeCrystals();
 	var goal = randomNum(19, 120);
 	console.log(goal);
+	console.log(crystValues);
 	$(".crystal-image").on("click", function() {
 
     	// Determining the crystal's value requires us to extract the value from the data attribute.
@@ -84,13 +110,14 @@ function theGame() {
 
     	// All of the same game win-lose logic applies. So the rest remains unchanged.
     	alert("New score: " + userTotal);
-    	console.log(goal);
     	if (userTotal === goal) {
       		alert("You win!");
+      		youWin();
     	}
 
     	else if (userTotal >= goal) {
       		alert("You lose!!");
+      		youLose();
     	}
 
 	});

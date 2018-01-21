@@ -1,8 +1,17 @@
 .crystal-image {
       width: 128px;
       height: 128px;
-      margin: 30px 30px;
+      margin: 20px 20px;
+      padding: 10px;
+      background-color: #777;
     }
+
+span {
+	font-size: 24px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0 0 0 30px;
+}
 
 body {
 	background-image: url("../images/bitcoin_background.jpg"); 
@@ -10,6 +19,29 @@ body {
     background-size: 100% 100%;
 }
 
-html {
-    height: 100%
+#numberGoal, #userScore {
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0 0 0 30px;
+	height: 200px;
+}
+
+/*.col {
+	height: 500px;
+}*/
+
+h1 {
+	font-weight: bold;
+	height: 60px;
+	color: orange;
+}
+
+#winStats p, #loseStats p {
+	margin-top: 30%;
+	margin-bottom: auto;
 }

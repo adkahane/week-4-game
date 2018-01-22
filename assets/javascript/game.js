@@ -67,6 +67,7 @@ function youLose() {
 	$("#loseStats").html("<p>Losses : " + losses + "</p>");
 	$("#crystals").html("");
 	userTotal = 0;
+	$("#userScore").text(userTotal);
 	crystValues = [];
 	console.log(crystValues);
 	theGame();
@@ -80,9 +81,20 @@ function youWin() {
 	$("#winStats").html("<p>Wins : " + wins + "</p>");
 	$("#crystals").html("");
 	userTotal = 0;
+	$("#userScore").text(userTotal);
 	crystValues = [];
 	console.log(crystValues);
 	theGame();
+}
+
+// Updates the Goal
+function updateGoal(goal) {
+	$("#numberGoal").text(goal);
+}
+
+// Updates the user's current total
+function updateTotal(total) {
+	$("#userScore").text(userTotal);
 }
 
 // This is the game
@@ -92,24 +104,16 @@ function theGame() {
 	}
 	makeCrystals();
 	var goal = randomNum(19, 120);
-	console.log(goal);
+	updateGoal(goal);
+	updateTotal(userTotal);
 	console.log(crystValues);
-	$(".crystal-image").on("click", function() {
 
-    	// Determining the crystal's value requires us to extract the value from the data attribute.
-    	// Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-    	// Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-    	// Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-    
+	$(".crystal-image").on("click", function() {
     	var crystalValue = ($(this).attr("data-crystalvalue"));
     	crystalValue = parseInt(crystalValue);
-
-    	// We then add the crystalValue to the user's "counter" which is a global variable.
-    	// Every click, from every crystal adds to the global counter.
     	userTotal += crystalValue;
-
-    	// All of the same game win-lose logic applies. So the rest remains unchanged.
-    	alert("New score: " + userTotal);
+    	updateTotal(userTotal);
+    	
     	if (userTotal === goal) {
       		alert("You win!");
       		youWin();
@@ -122,5 +126,8 @@ function theGame() {
 
 	});
 }
+
+
+// This is the game!
 
 theGame();

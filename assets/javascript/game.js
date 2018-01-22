@@ -96,7 +96,6 @@ function updateGoal(goal) {
 function updateTotal(total) {
 	$("#userScore").text(userTotal);
 }
-
 // This is the game
 function theGame() {
 	for(i = 0; crystValues.length < 4; i++) {

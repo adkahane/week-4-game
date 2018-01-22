@@ -47,7 +47,7 @@ h1 {
 }
 
 .total-score {
-	height: 100px ;
+	height: auto ;
 }
 
 #instruct {
@@ -55,5 +55,6 @@ h1 {
 }
 
 .instructions{
-	height: 500px;
+	font-size: 16px;
+	height: auto;
 }

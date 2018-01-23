@@ -40,21 +40,10 @@ function makeCrystalValue() {
 // Creates crystal img's assigns a data value and an image source
 function makeCrystals() {
 	for (var i = 0; i < 4; i++) {
-    	// For each iteration, we will create an imageCrystal
     	var imageCrystal = $("<img>");
-
-    	// First each crystal will be given the class ".crystal-image".
-    	// This will allow the CSS to take effect.
     	imageCrystal.addClass("crystal-image");
-
-    	// Each imageCrystal will be given a src link to the crystal image
     	imageCrystal.attr("src", crystImg[i]);
-
-    	// Each imageCrystal will be given a data attribute called data-crystalValue.
-    	// This data attribute will be set equal to the array value.
     	imageCrystal.attr("data-crystalvalue", crystValues[i]);
-
-    	// Lastly, each crystal image (with all it classes and attributes) will get added to the page.
     	$("#crystals").append(imageCrystal);
 	}
 }
@@ -127,6 +116,6 @@ function theGame() {
 }
 
 
-// This is the game!
+// And away we go.
 
 theGame();
